@@ -24,7 +24,7 @@ function testNoteListModelInstantiation() {
 
 function testNoteIsAddedToArray() {
   var noteList = new NoteList ("My favourite drink is seltzer");
-  if(noteList.addtext() !== ["My favourite drink is seltzer"]) {
+  if(noteList.addtext() !== "My favourite drink is seltzer") {
     throw new Error("Wrong Array!");
 
   };
