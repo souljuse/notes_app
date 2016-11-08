@@ -1,13 +1,13 @@
 "use strict";
 
-var noteList = new NoteList;
+var noteListTest = new NoteList;
 
 function testReturnNoteModels() {
 
-  noteList.addNote("test text");
-  noteList.addNote("more test text");
+  noteListTest.addNote("test text");
+  noteListTest.addNote("more test text");
 
-  var a = noteList.returnNotes();
+  var a = noteListTest.returnNotes();
 
   if ((a[0].returnText() !== "test text") && (a[1].returnText() !== "more test text")) {
     throw new Error("FAIL!!");

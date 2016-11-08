@@ -1,14 +1,41 @@
 "use strict";
 
-var element = document.getElementById("app").innerHTML;
+(function(exports) {
+  function NoteListController(noteList) {
+    this.noteList = noteList;
+  };
 
-function changeHTMLText(id, string) {
-   document.getElementById(id).innerHTML = string;
-}
+  NoteListController.prototype.insertNoteViewHTML = function() {
+    var noteListView = new NoteListView(noteList);
+    var notesHTML = noteListView.convertNotesToHTML();
+    document.getElementById("app").innerHTML = notesHTML;
+  };
+
+  exports.NoteListController = NoteListController;
+
+})(this);
 
 
- console.log(document.getElementById("app").innerHTML);
 
- changeHTMLText("app", "Howdy");
 
- console.log(document.getElementById("app").innerHTML);
+
+
+
+
+
+
+
+//
+//
+// var element = document.getElementById("app").innerHTML;
+//
+// function changeHTMLText(id, string) {
+//    document.getElementById(id).innerHTML = string;
+// }
+//
+//
+//  console.log(document.getElementById("app").innerHTML);
+//
+//  changeHTMLText("app", "Howdy");
+//
+//  console.log(document.getElementById("app").innerHTML);
