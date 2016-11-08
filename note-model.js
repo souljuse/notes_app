@@ -1,23 +1,13 @@
+(function(exports){
 
-function Note(string) {
-  var note = {};
-  var text = string;
+  function Note(text){
+    this.text = text;
+  }
 
-  note.getText = function () {
-    return text;
-  };
-  return note;
-};
-
-var n = Note("My favourite language is JavaScript");
-
-  function testTextofANoteUponInstantiation() {
-    var n = Note("My favourite language is JavaScript");
-    if (n.getText() !== "My favourite language is JavaScript") {
-      throw new Error("Incorrect!");
-    } else {
-      console.log("Correct!");
-    }
+  Note.prototype.getText = function () {
+    return this.text;
   };
 
-  testTextofANoteUponInstantiation();
+  exports.Note = Note;
+  exports.getText = this.getText;
+})(this);

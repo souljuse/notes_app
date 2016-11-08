@@ -1,15 +1,12 @@
-require("./note-model")
-var getText = require("./note-model").getText;
-var note = require("./note-model").Note;
+// var n = require("./note-model");
 
-function testTextofANoteUponInstantiation(string) {
-  var note = Note(string);
-  if (getText() !== "My favourite language is JavaScript") {
+function testTextofANoteUponInstantiation() {
+  var n = new Note("My favourite language is not JavaScript");
+  if (n.getText() !== "My favourite language is not JavaScript") {
     throw new Error("Incorrect!");
   } else {
     console.log("Correct!");
   }
 };
 
-testTextofANoteUponInstantiation("My favourite language is JavaScript");
-// testTextofANoteUponInstantiation('I really dislike JavaScript!');
+testTextofANoteUponInstantiation();

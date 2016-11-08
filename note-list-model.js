@@ -1,38 +1,19 @@
-'use strict';
+(function(exports){
 
-function NoteList() {
-  this.list = [];
-}
-
-NoteList.prototype.text = function() {
-  return "My favourite drink is seltzer";
-}
-
-NoteList.prototype.addItem = function() {
-  return this.list.push("My favourite drink is seltzer");
-}
-
-function testNoteListModelInstantiation() {
-  var noteList = new NoteList ("My favourite drink is seltzer");
-  if (noteList.text()!== "My favourite drink is seltzer") {
-    throw new Error("Incorrect!");
+  function NoteList(){
+    this.notes = [];
   }
-};
 
-function testNoteIsAddedToArray() {
-  var noteList = new NoteList ("My favourite drink is seltzer");
-  // console.log(noteList);
-  // console.log(noteList.text());
-  // console.log(noteList.addItem());
-  // console.log(noteList.addItem());
-  // console.log(noteList.addItem());
-  // console.log(noteList.addItem());
-  // console.log(noteList.list);
-  noteList.addItem();
-  if (noteList.list[0] !== "My favourite drink is seltzer") {
-    throw new Error("Wrong Array!");
-  }
-}
+  NoteList.prototype.addItem = function(text) {
+    var note = new Note(text);
+    this.notes.push(note);
+  };
 
-testNoteListModelInstantiation();
-testNoteIsAddedToArray();
+  NoteList.prototype.readNotes = function () {
+    return this.notes;
+  };
+
+  exports.NoteList = NoteList;
+  exports.addItem = this.addItem;
+  exports.readNotes = this.readNotes;
+})(this);
