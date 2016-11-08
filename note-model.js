@@ -1,18 +1,23 @@
-'use strict';
 
-function Note() {
-}
+function Note(string) {
+  var note = {};
+  var text = string;
 
-Note.prototype.text = function() {
-  return "My favourite language is JavaScript"
-}
-
-function testTextofANoteUponInstantiation() {
-  var note = new Note("My favourite language is JavaScript");
-
-  if (note.text()!== "My favourite language is JavaScript") {
-    throw new Error("Incorrect!");
-  }
+  note.getText = function () {
+    return text;
+  };
+  return note;
 };
 
-testTextofANoteUponInstantiation();
+var n = Note("My favourite language is JavaScript");
+
+  function testTextofANoteUponInstantiation() {
+    var n = Note("My favourite language is JavaScript");
+    if (n.getText() !== "My favourite language is JavaScript") {
+      throw new Error("Incorrect!");
+    } else {
+      console.log("Correct!");
+    }
+  };
+
+  testTextofANoteUponInstantiation();
