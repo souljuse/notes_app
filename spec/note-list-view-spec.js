@@ -43,6 +43,6 @@ function testNoteListViewReturnsHTMLForNoNotes() {
   };
 }
 
-testNoteListViewReturnsHTML()
-testNoteListViewReturnsHTMLForOneNote()
-testNoteListViewReturnsHTMLForNoNotes()
+testNoteListViewReturnsHTMLForMutlipleNotes();
+testNoteListViewReturnsHTMLForOneNote();
+testNoteListViewReturnsHTMLForNoNotes();
