@@ -16,8 +16,8 @@ function testDisplaysHTML() {
 
 function testDisplaySelectedNote(){
   if (location.hash === "#0") {
-    if (document.getElementById("singleNote").textContent !== "Favourite drink: seltzer") {
-      throw new Error("FAIL! Expected 'Favourite drink: seltzer', got " + document.getElementById("singleNote").textContent);
+    if (document.getElementById("app").textContent !== "Favourite drink: seltzer") {
+      throw new Error("FAIL! Expected 'Favourite drink: seltzer', got " + document.getElementById("app").textContent);
     } else {
       console.log(".dadsda")
     };

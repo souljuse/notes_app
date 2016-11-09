@@ -27,14 +27,16 @@
   //   return location.hash.split("#")[1];
   // };
   //
-  // NoteListController.prototype.returnSingleNote = function(id) {
-  //   console.log(id)
-  //   console.log(this.noteList)
-  //   singleNoteView = new SingleNoteView(noteList.listOfNotes[id]);
-  //   document
-  //   .getElementById("app")
-  //   .innerHTML = singleNoteView.createNoteView();
-  // };
+  NoteListController.prototype.createView = function(noteList) {
+    var id = getNoteIdFromUrl(window.location);
+    var singleNoteView = new SingleNoteView(noteList.listOfNotes[id]);
+    singleNoteView.createNoteView();
+    return singleNoteView.noteView
+
+    // document
+    // .getElementById("app")
+    // .innerHTML = singleNoteView.createNoteView();
+  };
 
   exports.NoteListController = NoteListController;
 
@@ -45,38 +47,27 @@ var noteListController = new NoteListController(noteList);
 
 noteList.addNote("Favourite drink: seltzer");
 noteList.addNote("Favourite animal: Meercat");
-console.log(note)
 
 noteListController.insertNoteViewHTML();
+var htmlNote = noteListController.createView(noteList);
 
-
-function updateURL() {
-    window.addEventListener("hashchange", setsUpNoteAndId);
+function updateURL(notelist) {
+    var htmlNote = noteListController.createView(notelist);
+    window.addEventListener("hashchange", returnSingleNote(htmlNote));
   };
-
-  function testFunction(){
-    console.log("It's working")
-  };
-
-  function setsUpNoteAndId() {
-      returnSingleNote(getNoteIdFromUrl(window.location));
-    };
 
   function getNoteIdFromUrl(location) {
-      return location.hash.split("#")[1];
-    };
+    return location.hash.split("#")[1];
+  };
 
-    function returnSingleNote(id) {
-      console.log(id)
-      console.log(noteList)
-    singleNoteView = new SingleNoteView(noteList.listOfNotes[id]);
+  function returnSingleNote(html) {
      document
        .getElementById("app")
-       .innerHTML = singleNoteView.createNoteView();
+       .innerHTML = html;
    };
 
-   updateURL()
-
+// returnSingleNote(htmlNote)
+updateURL(noteList)
 
 
 

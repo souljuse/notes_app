@@ -6,6 +6,3 @@
 // noteList.addNote("Favourite animal: Meercat");
 
 // noteListController.updateURL()
-
-noteListController.insertNoteViewHTML();
-noteListController.returnSingleNote();
