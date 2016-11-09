@@ -7,7 +7,7 @@
   };
 
   SingleNoteView.prototype.createNoteView = function() {
-    this.noteView = "<div>" + this.note + "</div>"
+    this.noteView = "<div id='singleNote'>" + this.note + "</div>"
   };
 
   exports.SingleNoteView = SingleNoteView;
