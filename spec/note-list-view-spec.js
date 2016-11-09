@@ -43,6 +43,22 @@ function testNoteListViewReturnsHTMLForNoNotes() {
   };
 }
 
+function testNoteListViewReturnsHTMLForOneNote() {
+
+  var noteList= new NoteList;
+  var noteListView = new NoteListView(noteList);
+
+  noteList.addNote("123456789012345678901");
+
+  if (noteListView.convertNotesToHTML() !== "<ul><li><div>12345678901234567890</div></li></ul>")  {
+    throw new Error("FAIL!! Expected <ul><li><div>12345678901234567890</div></li></ul>, but got" + noteListView.convertNotesToHTML() );
+  } else {
+    console.log(".")
+  };
+}
+
+
+
 testNoteListViewReturnsHTMLForMutlipleNotes();
 testNoteListViewReturnsHTMLForOneNote();
 testNoteListViewReturnsHTMLForNoNotes();

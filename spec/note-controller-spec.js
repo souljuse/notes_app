@@ -7,7 +7,7 @@ function testDisplaysHTML() {
   noteList.addNote("Favourite drink: seltzer");
   noteController.insertNoteViewHTML();
 
-  if (document.getElementById("app").textContent !== "Favourite drink: seltzer") {
+  if (document.getElementById("app").textContent !== "Favourite drink: sel") {
     throw new Error("FAIL!! Got " + document.getElementById("app").textContent);
   } else {
     console.log(".")
