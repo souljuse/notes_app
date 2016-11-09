@@ -1,7 +1,7 @@
 (function(exports){
 
   function Note(text){
-    this.string = text || ""
+    this.string = text;
   }
 
   Note.prototype.text = function(){
