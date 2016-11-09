@@ -7,7 +7,7 @@
   NoteListView.prototype.orderList = function() {
     for(var i = 0; i < this.noteList.length; i++){
       var str = this.noteList[i].text;
-      this.noteList[i].text = "<li><div>" + str + "</div></li>";
+      str = "<li><div>" + str + "</div></li>";
     }
   };
 
