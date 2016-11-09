@@ -10,7 +10,7 @@
     var textArray = [];
 
     for (var i=0; i < notesArray.length; i++) {
-      var text = notesArray[i].returnText();
+      var text = notesArray[i].returnText().slice(0,20);
       textArray.push(text);
     }
     return "<ul><li><div>" + textArray.join("</div></li><li><div>") + "</div></li></ul>"

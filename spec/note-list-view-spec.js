@@ -50,8 +50,8 @@ function testNoteListViewReturnsHTMLForOneNote() {
 
   noteList.addNote("123456789012345678901");
 
-  if (noteListView.convertNotesToHTML() !== "<ul><li><div>12345678901234567890</div></li></ul>")  {
-    throw new Error("FAIL!! Expected <ul><li><div>12345678901234567890</div></li></ul>, but got" + noteListView.convertNotesToHTML() );
+  if (noteListView.convertNotesToHTML() !== "<ul><li><div>0. 12345678901234567890</div></li></ul>")  {
+    throw new Error("FAIL!! Expected <ul><li><div>0. 12345678901234567890</div></li></ul>, but got" + noteListView.convertNotesToHTML() );
   } else {
     console.log(".")
   };
