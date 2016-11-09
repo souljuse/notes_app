@@ -11,7 +11,7 @@
 
     for (var i=0; i < notesArray.length; i++) {
       var text = notesArray[i].returnText().slice(0,20);
-      textArray.push(text);
+      textArray.push(i + ". " + text);
     }
     return "<ul><li><div>" + textArray.join("</div></li><li><div>") + "</div></li></ul>"
   };
