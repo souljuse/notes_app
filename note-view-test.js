@@ -1,4 +1,5 @@
 
+
 function testEmptyNoteListView() {
   var noteList = new NoteList();
   var arr = noteList.readNotes();
