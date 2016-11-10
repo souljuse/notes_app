@@ -9,7 +9,6 @@ describe('Controller', function(){
     notelist.convertToString();
     var notelistview = new NoteListView(notelist);
     notelistview.convertToHtml(notelist);
-    console.log(document.getElementsByClassName("list-item")[0].textContent)
     expect(document.getElementsByClassName("list-item")[0].textContent).toEqual("Favourite Drink: sel");
   });
 

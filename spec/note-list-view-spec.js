@@ -9,9 +9,9 @@ describe('NoteListView', function(){
     notelist.convertToString();
     var notelistview = new NoteListView(notelist);
     notelistview.convertToHtml(notelist);
-    expect(notelistview.converted[0]).toEqual("<li class='list-item'><div>I like cheese</div></li>");
-    expect(notelistview.converted[1]).toEqual("<li class='list-item'><div>Cake is good too</div></li>");
-    expect(notelistview.convertedHTMLString).toEqual("<ul id='note-list'><li class='list-item'><div>I like cheese</div></li><li class='list-item'><div>Cake is good too</div></li></ul>");
+    expect(notelistview.converted[0]).toEqual("<li class='list-item'><div><a href='#0'>I like cheese</a></div></li>");
+    expect(notelistview.converted[1]).toEqual("<li class='list-item'><div><a href='#1'>Cake is good too</a></div></li>");
+    expect(notelistview.convertedHTMLString).toEqual("<ul id='note-list'><li class='list-item'><div><a href='#0'>I like cheese</a></div></li><li class='list-item'><div><a href='#1'>Cake is good too</a></div></li></ul>");
   });
 
 
