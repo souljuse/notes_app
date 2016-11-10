@@ -7,9 +7,10 @@
   }
 
   NoteListView.prototype.convertToHtml = function (notelist) {
+
     if (this.notelist.notes.length > 0){
       for (var i = 0; i < this.notelist.noteStrings.length; i++){
-        var html = "<li class='list-item'><div>" + this.notelist.noteStrings[i] + "</div></li>";
+        var html = "<li class='list-item'><div>" + this.notelist.noteStrings[i].slice(0,20) + "</div></li>";
         this.converted.push(html);
       }
       this.convertedHTMLString = "<ul id='note-list'>" + this.converted.join("") + "</ul>"

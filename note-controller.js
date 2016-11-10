@@ -15,6 +15,6 @@
     notelist.convertToString()
     notelistview.convertToHtml(notelist);
   };
-
+  
   exports.NoteController = NoteController;
 })(this);
