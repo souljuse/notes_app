@@ -1,11 +1,10 @@
 describe('SingleNoteVew', function() {
 
-  it('should iterate through a list and convert each note string to html', function(){
+  it('should convert a note string to html', function(){
     var note = new Note("I like cheese")
-    var singlenoteview = new SingleNoteView;
-    singlenoteview.convertToHtml(note);
-    expect(singlenoteview.converted).toEqual("<div> I like cheese </div>");
-
+    var singlenoteview = new SingleNoteView(note);
+    singlenoteview.convertNoteToHtml();
+    expect(singlenoteview.convertedHTMLNote).toEqual("<div id='single-note'>I like cheese</div>");
   });
 
 });
