@@ -8,9 +8,7 @@
   NoteController.prototype.changeText = function () {
     appDiv = document.getElementById("app")
     this._conversion()
-    for(var i = 0; i < notelist.notes.length; i++){
-      appDiv.innerHTML += notelistview.converted[i];
-    }
+    appDiv.innerHTML = notelistview.convertedHTMLString;
   };
 
   NoteController.prototype._conversion = function () {
