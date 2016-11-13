@@ -6,14 +6,8 @@
   }
 
   NoteController.prototype.changeText = function () {
-    appDiv = document.getElementById("app")
-    this._conversion()
-    appDiv.innerHTML = notelistview.convertedHTMLString;
-  };
-
-  NoteController.prototype._conversion = function () {
-    notelist.convertToString()
-    notelistview.convertToHtml(notelist);
+    notelistview.convertToHtml(this.notelist);
+    document.getElementById("app").innerHTML = notelistview.convertedHTMLString;
   };
 
   NoteController.prototype.makeUrlChangeShowNoteForCurrentPage = function() {
@@ -38,13 +32,34 @@
     document
       .getElementById("app")
       .innerHTML = noteToBeDisplayed;
-
-
   };
+
+  // NoteController.prototype.submitNewNoteWhenButtonClicked = function(){
+  //   console.log(this)
+  //   document.getElementById("create-note-button")
+  //   .addEventListener("click", function(evt) {
+  //
+  //     evt.preventDefault();
+  //     var text = document.getElementById("text").value;
+  //     submitNote(text);
+  //   });
+  // };
+
 
   exports.NoteController = NoteController;
 })(this);
 
+// function submitNote(text){
+//   var newNote = new Note(text);
+//   noteList.addNote(text);
+// }
+
   // function getNoteFromUrl(location){
   //   location.hash.split("#")[1];
   // };
+
+// function clickButton(){
+//   document
+//         .getElementById("create-note-button")
+//         .addEventListener("click", this.createNote, false);
+// }

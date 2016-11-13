@@ -1,15 +1,27 @@
 notelist = new NoteList()
 noteController = new NoteController(notelist)
-note = new Note("Favourite Drink: seltzer")
+note1 = new Note("Favourite Drink: seltzer")
 note2 = new Note("Favourite Pudding: Carrot Cake")
-noteController.notelist.addNote(note)
+noteController.notelist.addNote(note1)
 noteController.notelist.addNote(note2)
-notelistview = new NoteListView(noteController.notelist)
+notelistview = new NoteListView()
 noteController.changeText()
 // document.getElementById("create-note").addEventListener("click", noteController.makeUrlChangeShowNoteForCurrentPage());
 // noteController.makeUrlChangeShowNoteForCurrentPage();
+document.getElementById("create-note-button").addEventListener("click", function(evt) {
+  evt.preventDefault();
+  var text = document.getElementById("text").value;
+  var newNote = new Note(text);
+  notelist.addNote(newNote);
+  noteController.changeText()
+});
 document.addEventListener("hashchange", noteController.makeUrlChangeShowNoteForCurrentPage());
 
+function newNote(text){
+  // var newNote = new Note(text);
+  // notelist.addNote(newNote);
+  // console.log(notelist.noteStrings[3])
+}
 
 // window.addEventListener("hashchange", function() {
 //

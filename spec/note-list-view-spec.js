@@ -6,7 +6,6 @@ describe('NoteListView', function(){
     var notelist = new NoteList();
     notelist.addNote(note);
     notelist.addNote(note2);
-    notelist.convertToString();
     var notelistview = new NoteListView(notelist);
     notelistview.convertToHtml(notelist);
     expect(notelistview.converted[0]).toEqual("<li class='list-item'><div><a href='#0'>I like cheese</a></div></li>");

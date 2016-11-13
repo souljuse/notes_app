@@ -9,6 +9,7 @@ NoteList.prototype.addNote = function (note) {
   note.number = this.noteIndex
   this.notes.push(note)
   this.noteIndex ++;
+  convertToString(this);
 };
 
 NoteList.prototype.showNotes = function () {
@@ -17,11 +18,9 @@ NoteList.prototype.showNotes = function () {
   }
 };
 
-NoteList.prototype.convertToString = function () {
-  for (var i = 0; i < this.notes.length; i++){
-    var item = this.notes[i].string;
-    this.noteStrings.push(item);
-  }
+function convertToString(shish) {
+  var item = shish.notes[shish.notes.length - 1].string;
+  shish.noteStrings.push(item);
 };
 
 
